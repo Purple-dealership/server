@@ -47,8 +47,11 @@ Wireframe #1
 wireframe #2
 ![wf2](img/wireframe2.png)
 
+Front-end Component Tree
+![FECT](img/compTree.jpg)
+
 UML
-![UML](/img/UML.png)
+![UML](img/uml.jpg)
 
 ## Schema
 
