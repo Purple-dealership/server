@@ -16,6 +16,7 @@ const carSchema = new Schema({
   drive: { type: String, required: false },
   transmission: { type: String, required: false },
   class: { type: String, required: false },
+  trim: { type: String, required: false },
   displacement: { type: Number, required: false },
   fuel_type: { type: String, required: false },
 });
