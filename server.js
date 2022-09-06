@@ -5,7 +5,6 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const Cars = require('./model.js');
-const { application } = require('express');
 require('dotenv').config();
 const PORT = process.env.PORT || 3002;
 mongoose.connect(process.env.DB_URL);
