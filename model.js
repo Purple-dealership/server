@@ -20,6 +20,7 @@ const carSchema = new Schema({
   trim: { type: String, required: false },
   displacement: { type: Number, required: false },
   fuel_type: { type: String, required: false },
+  color: { type: String, required: false },
   price: { type: Number, required: false },
   description: { type: String, required: false },
   featured: { type: Boolean, required: false },
