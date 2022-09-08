@@ -41,9 +41,7 @@ async function getCars(req, res, next) {
 
 async function postCar(req, res, next) {
   try {
-    console.log('we here');
     let results = await Car.create(req.body);
-    console.log(req.body);
     res.status(200).send(results);
   } catch (err) {
     next(err);
