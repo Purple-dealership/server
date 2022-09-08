@@ -76,3 +76,6 @@ UML
 - David Suy
 - Carlos Herrera
 - Jefferey Smith
+
+## Acknowledgements and Citations:
+[Car race icons created by Maan Icons - Flaticon] (https://www.flaticon.com/free-icons/car-race)
