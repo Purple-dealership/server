@@ -5,6 +5,7 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const Car = require('./model.js');
+const { default: axios } = require('axios');
 require('dotenv').config();
 const PORT = process.env.PORT || 3002;
 mongoose.connect(process.env.DB_URL);
@@ -28,6 +29,8 @@ app.get('/cars', getCars);
 app.post('/cars', postCar);
 app.delete('/cars/:id', deleteCar);
 app.put('/cars/:id', putCar);
+
+app.get('/api', getApi);
 
 // HANDLER
 async function getCars(req, res, next) {
@@ -58,10 +61,29 @@ async function deleteCar(req, res, next) {
   }
 }
 
+async function getApi(req, res, next) {
+  try {
+    let config = {
+      headers: {
+        'X-Api-Key': 'BeB7iwBCS4jZGXGcEa0IuA==PaXu6WFTumbMn9Cq',
+      },
+    };
+    let url =
+      'https://api.api-ninjas.com/v1/cars?limit=1&model=civic&year=2002&make=honda';
+    let result = await axios.get(url, config);
+    console.log(req.query);
+    console.log(result.data);
+    res.status(200).send(result.data);
+  } catch (err) {
+    next(err);
+  }
+}
+
 async function putCar(req, res, next) {
   try {
     const id = req.params.id;
     const updatedCar = req.body;
+    console.log(updatedCar);
     let results = await Car.findByIdAndUpdate(id, updatedCar, {
       new: true,
       overwrite: true,
